@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "live-server ."
+    "start": "live-server .",
+    "test": "node_modules/jest/bin/jest.js spec"
   },
   "author": "",
   "license": "ISC",

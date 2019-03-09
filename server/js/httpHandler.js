@@ -7,7 +7,13 @@ module.exports.backgroundImageFile = './background.jpg';
 ////////////////////////////////////////////////////////
 
 module.exports.router = (req, res, next = ()=>{}) => {
-  console.log('Serving request type ' + req.method + ' for url ' + req.url);
-  res.writeHead(200, headers);
-  res.end();
+  if (req.method === 'GET') {
+    res.writeHead(200, headers);
+    var commands = ["left", "right", "up", "down"];
+    //res.write(commands[Math.floor(Math.random() * commands.length)])
+    res.end(commands[Math.floor(Math.random() * commands.length)]);
+  } else if (req.method === 'OPTIONS') {
+    res.writeHead(200, headers);
+    res.end()
+  }
 };
