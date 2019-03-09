@@ -1,10 +1,16 @@
-(function() {
+setInterval(function() {
   const serverUrl = 'http://127.0.0.1:3000';
   
   var getCommand = $.ajax({
     url: serverUrl,
     type: 'GET',
-  }).done(alert('hi'))
+  })
+  
+  getCommand.done(function(data) {
+    return SwimTeam.move(data)
+  })
 
-  $( document ).load(alert('hi'));
-})();
+  getCommand.fail(function() {
+    console.log('request for command failed');
+  })
+}, 500);

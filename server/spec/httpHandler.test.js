@@ -27,6 +27,7 @@ describe('server responses', () => {
     expect(res._responseCode).to.equal(200);
     expect(res._ended).to.equal(true);
     expect(res._data.toString()).to.be.oneOf(["left", "right", "up", "down"]); 
+    //change expect to to.be.("whatever user input")
     done();
   });
 
